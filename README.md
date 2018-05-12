@@ -1,17 +1,13 @@
-# Dynpages
+# Django Dynpages
 
 A lightweight Dynamic Django flatpage application with i18n support and no sites requirements.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
 i18n has to be enabled for this application to work properly.
 See the following link for instructions on how to enable [Internationalization](https://docs.djangoproject.com/en/2.0/topics/i18n/).
 
-Dependencies:
+### Dependencies
 
 ```
 Django >= 2.0.0
