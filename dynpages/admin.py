@@ -16,10 +16,6 @@ class DynPageAdmin(admin.ModelAdmin):
         ('Content', {
             'fields': ('content',)
         }),
-        ('Advanced meta', {
-            'classes': ('collapse',),
-            'fields': ('og_image', 'twitter_card', 'twitter_image'),
-        }),
         ('Advanced settings', {
             'classes': ('collapse',),
             'fields': ('template_name',),

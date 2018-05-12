@@ -3,9 +3,6 @@ from django.urls import get_script_prefix
 from django.utils.encoding import iri_to_uri
 from django.conf import settings
 
-from tinymce import HTMLField
-from filebrowser.fields import FileBrowseField
-
 
 class DynPage(models.Model):
 
@@ -22,21 +19,8 @@ class DynPage(models.Model):
     description = models.TextField('description', max_length=200)
     keywords = models.CharField('keywords', max_length=200)
 
-    # Advanced meta tags
-    og_image = FileBrowseField('open graph image',
-                               max_length=200,
-                               extensions=['.jpg', '.jpeg', 'png'],
-                               blank=True
-                               )
-    twitter_card = models.TextField('twitter card', max_length=200, blank=True)
-    twitter_image = FileBrowseField('twitter image',
-                                    max_length=200,
-                                    extensions=['.jpg', '.jpeg', 'png'],
-                                    blank=True
-                                    )
-
     # Content
-    content = HTMLField('content')
+    content = models.TextField('content')
 
     # Advanced settings
     template_name = models.CharField(
