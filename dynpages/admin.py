@@ -21,5 +21,9 @@ class DynPageAdmin(admin.ModelAdmin):
             'fields': ('template_name',),
         }),
     )
-    list_display = ('url', 'title', 'language')
-    search_fields = ('url', 'title')
+    list_display = ('id', 'language', 'url', 'title',)
+    list_display_links = ('url', 'title',)
+    list_filter = ('language',)
+    ordering = ('id',)
+    search_fields = ('url', 'title',)
+

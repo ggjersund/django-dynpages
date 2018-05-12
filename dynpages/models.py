@@ -12,7 +12,8 @@ class DynPage(models.Model):
     language = models.CharField('language',
                                 max_length=6,
                                 default=settings.LANGUAGE_CODE,
-                                help_text="Example: 'en-gb' or 'nb'. If not provided default is language default."
+                                choices=settings.LANGUAGES,
+                                help_text="PS: Page will invalidate when language is removed"
                                 )
 
     # Meta tags
@@ -40,4 +41,4 @@ class DynPage(models.Model):
         return "%s -- %s" % (self.url, self.title)
 
     def get_absolute_url(self):
-        return iri_to_uri(get_script_prefix().rstrip('/') + self.url)
+        return iri_to_uri(get_script_prefix().rstrip('/') + ('/' + self.language + self.url))
